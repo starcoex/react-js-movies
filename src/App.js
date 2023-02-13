@@ -1,27 +1,19 @@
-import { useEffect, useState } from 'react';
-
+import { BrowserRouter, Link, Route, Routes } from 'react-router-dom';
+import './stlyes.css';
+import Detail from './routes/Detail';
+import Home from './routes/Home';
 function App() {
-  const [loading, setLoading] = useState(true);
-  const [coins, setCoins] = useState([]);
-  useEffect(() => {
-    fetch('https://api.coinpaprika.com/v1/tickers').then((response) =>
-      response.json().then((json) => {
-        setCoins(json);
-        setLoading(false);
-      })
-    );
-  }, []);
   return (
-    <div>
-      <h1>The Coins : {coins.length}</h1>
-      {loading ? <strong>Loading...</strong> : null}
-      <ul>
-        {coins.map((coin) => (
-          <li key={coin.id}>
-            {coin.name} ({coin.symbol})
-          </li>
-        ))}
-      </ul>
+    <div className='App'>
+      <header>
+        <Link to={'/'}>MARVEL CHARCTER SHEET</Link>
+      </header>
+      <BrowserRouter>
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='/character/:id' element={<Detail />} />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
