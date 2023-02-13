@@ -1,4 +1,32 @@
-#title {
-  color: red;
-  font-size: 100px;
+.header {
+  font-size: 50px;
+  text-align: center;
+  margin: 10px;
+  padding: 5px;
+  background-color: #ec1c23;
+}
+.header a {
+  text-decoration-line: none;
+  color: white;
+}
+.loading {
+  text-align: center;
+}
+.home {
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
+}
+/* .movies {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+} */
+.movies a {
+  text-decoration: none;
+  color: black;
+}
+.movies h2 {
+  width: 30%;
+  font-size: 20px;
 }

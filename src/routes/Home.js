@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
+import styles from '../App.module.css';
 import Movie from '../components/Movie';
 
 export default function Home() {
@@ -16,17 +18,16 @@ export default function Home() {
   }, []);
   // console.log(movies);
   return (
-    <div>
+    <div className={styles.home}>
+      {/* <header>
+        <Link to={'/'}>MARVEL CHARCTER SHEET</Link>
+      </header> */}
+
       {loading ? (
-        <h1>Loading...</h1>
+        <h1 className={styles.loading}>Loading...</h1>
       ) : (
         movies.map((movie) => (
-          <Movie
-            key={movie.id}
-            id={movie.id}
-            name={movie.name}
-            thumbnail={movie.thumbnail.path}
-          />
+          <Movie key={movie.id} id={movie.id} name={movie.name} />
         ))
       )}
     </div>
