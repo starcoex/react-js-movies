@@ -1,19 +1,21 @@
 import React from 'react';
-import styles from '../App.module.css';
-import propTypes from 'prop-types';
+import styles from '../styles/List.module.css';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-export default function Movie({ id, name }) {
+export default function Movie({ id, name, thumbnail }) {
   return (
-    <div className={styles.movies}>
+    <li key={id} className={styles.item}>
       <Link to={`/character/${id}`}>
-        {' '}
-        <h2>{name}</h2>
+        <div className={styles.imgBox}>
+          <img alr={name} src={`${thumbnail.path}.${thumbnail.extension}`} />
+        </div>
+        <div className={styles.name}>{name}</div>
       </Link>
-      {/* <p>{movie.thumbnail.path}</p> */}
-    </div>
+    </li>
   );
 }
-Movie.propTypes = {
-  id: propTypes.number.isRequired,
-  name: propTypes.string.isRequired,
+Movie.prototype = {
+  id: PropTypes.number.isRequired,
+  name: PropTypes.object.isRequired,
+  thumbnail: PropTypes.object.isRequired,
 };

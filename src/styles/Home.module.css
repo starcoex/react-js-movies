@@ -1,0 +1,45 @@
+.title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 15px;
+  width: fit-content;
+  margin: auto auto 30px auto;
+  background-color: red;
+  border-radius: 15px;
+}
+
+.title > span {
+  display: inline-block;
+  font-size: 40px;
+  line-height: 1;
+  margin-left: 15px;
+  font-weight: 900;
+  color: white;
+  letter-spacing: -1px;
+  text-align: center;
+}
+.list {
+  list-style: none;
+  margin: auto;
+  padding: 0px;
+  width: 768px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.loading {
+  margin: auto;
+  padding: 0;
+  width: 768px;
+  height: 1190px;
+  text-align: center;
+  position: relative;
+}
+.loading h1 {
+  color: black;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
