@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import styles from '../styles/Home.module.css';
 import { useParams } from 'react-router-dom';
 import CharacterDetail from '../components/CharacterDetail';
 
