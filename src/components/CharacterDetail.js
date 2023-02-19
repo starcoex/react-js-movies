@@ -29,22 +29,6 @@ export default function CharacterDetail({
               <li key={comic.name}>{comic.name}</li>
             ))}
           </ul>
-          {/* <h1>
-            <span>Series</span>
-          </h1>
-          <ul>
-            {series.items.map((comic) => (
-              <li key={comic.name}>{comic.name}</li>
-            ))}
-          </ul>
-          <h1>
-            <span>Stories</span>
-          </h1>
-          <ul>
-            {stories.items.map((comic) => (
-              <li key={comic.name}>{comic.name}</li>
-            ))}
-          </ul> */}
         </div>
       </section>
     </div>
