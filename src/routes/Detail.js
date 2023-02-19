@@ -11,6 +11,7 @@ export default function Detail() {
   useEffect(() => {
     const getDetail = async () => {
       const json = await (await fetch(fetchUrl)).json();
+      console.log(json);
       setCharcter(json.data.results);
       setLoading(false);
     };
@@ -18,9 +19,9 @@ export default function Detail() {
   }, [fetchUrl]);
 
   return (
-    <div className={styles.title}>
+    <div>
       {loading ? (
-        <div className={styles.loading}>
+        <div>
           <h1>Loading...</h1>
         </div>
       ) : (
@@ -30,7 +31,9 @@ export default function Detail() {
             id={char.id}
             name={char.name}
             thumbnail={char.thumbnail}
-            comic={char.comic}
+            comics={char.comics}
+            series={char.series}
+            stories={char.stories}
           />
           //   <h2>{char.name}</h2>
           //   <div>
