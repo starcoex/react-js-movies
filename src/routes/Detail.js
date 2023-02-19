@@ -11,7 +11,6 @@ export default function Detail() {
   useEffect(() => {
     const getDetail = async () => {
       const json = await (await fetch(fetchUrl)).json();
-      console.log(json);
       setCharcter(json.data.results);
       setLoading(false);
     };
